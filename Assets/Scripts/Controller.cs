@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
+[System.Serializable]
+public struct SoundSource
+{
+    public int horizontalCoordiante;
+    public int verticalCoordiante;
+    public float soundLevel;
+}
 
 public class Controller : MonoBehaviour
 {
-
-    [System.Serializable]
-    public struct SoundSource
-    {
-        public int horizontalCoordiante;
-        public int verticalCoordiante;
-        public float soundLevel;
-    }
-
     public bool flipMovement = true;
 
     public int horizontalTicks = 12;
     public int verticalTicks = 10;
 
-    public Slider fuelGauge; 
+    //public Slider fuelGauge; 
 
     public float maxFuel;
     public int noTries;
@@ -30,13 +29,14 @@ public class Controller : MonoBehaviour
     public GameObject confirmButton;
 
     public GameObject noiseSource;
+    public GameObject ambientSource;
 
     //public GameObject reticle;
     public RectTransform reticle;
 
-    public GameObject soundGauge;
+    //public GameObject soundGauge;
 
-    public Sprite cursor;
+    //public Sprite cursor;
 
     private float horizontalDegrees;
     private float verticalDegrees;
@@ -61,6 +61,7 @@ public class Controller : MonoBehaviour
 
     private AudioSource audios;
 
+    bool disableEverything = false;
     public enum Knob {
         Vertical,
         Horizontal,
@@ -87,9 +88,31 @@ public class Controller : MonoBehaviour
     }
 
     private IntPair reticlePos;
-    private Knob selectedKnob;
+    
+    public Knob selectedKnob;
 
     private Vector3 retPosStart;
+
+    public enum Depth
+    {
+        Galaxy,
+        Cluster,
+        System,
+        Event,
+        End
+    }
+
+    [Header("Maps")]
+    public GameObject[] galaxy;
+    public GameObject[] clusters;
+    public GameObject[] systems;
+    public GameObject[] events;
+    public GameObject[] end;
+
+
+    GameObject currentMap;
+    Depth currentDepth;
+    Dictionary<SoundSource, int> systemsLocations;
 
 
     [Header("Audio")]
@@ -117,10 +140,7 @@ public class Controller : MonoBehaviour
 
         soundFallofFAmount = 1.0f / soundFalloffSpaces;
 
-        foreach (SoundSource s in soundSources)
-        {
-            AssignSoundLevelRecursion(s.verticalCoordiante, s.horizontalCoordiante, s.soundLevel);
-        }
+        
 
 
         //fade the sound by soundLevel
@@ -135,6 +155,64 @@ public class Controller : MonoBehaviour
         SetReticleToPos(0, 0);
 
         audios = GetComponent<AudioSource>();
+
+        int randInt = UnityEngine.Random.Range(0, galaxy.Length);
+        currentMap = galaxy[randInt];
+
+        currentDepth = Depth.Galaxy;
+
+        soundSources = currentMap.GetComponent<MapData>().soundSources;
+        CreateSoundMap();
+
+
+        //set systems at random
+        List<SoundSource> possibleSources = new List<SoundSource>();
+
+        SoundSource[] ss = clusters[0].GetComponent<MapData>().soundSources;
+        foreach (SoundSource s in ss)
+        {
+            if (s.soundLevel == 1)
+                possibleSources.Add(s);
+        }
+
+        int noSystems = systems.Length;
+
+        int[] systemsIndex = new int[noSystems];
+        for (int i = 0; i < noSystems; i++)
+        {
+            systemsIndex[i] = i;
+        }
+
+        ShuffleArray(systemsIndex);
+
+        systemsLocations = new Dictionary<SoundSource, int>();
+        int noLocations = Mathf.Min(possibleSources.Count, systemsIndex.Length);
+        for (int i = 0; i < noLocations; i++)
+        {
+            systemsLocations.Add(possibleSources[i], systemsIndex[i]);
+        }
+        
+
+    }
+
+    public static void ShuffleArray<T>(T[] arr)
+    {
+        for (int i = arr.Length - 1; i > 0; i--)
+        {
+            int r = UnityEngine.Random.Range(0, i);
+            T tmp = arr[i];
+            arr[i] = arr[r];
+            arr[r] = tmp;
+        }
+    }
+
+    void CreateSoundMap()
+    {
+        Array.Clear(soundMap, 0, soundMap.Length);
+        foreach (SoundSource s in soundSources)
+        {
+            AssignSoundLevelRecursion(s.verticalCoordiante, s.horizontalCoordiante, s.soundLevel);
+        }
     }
 
     void AssignSoundLevelRecursion(int row, int collumn, float soundLevel)
@@ -165,7 +243,8 @@ public class Controller : MonoBehaviour
         // a/d - select knobs
         // q/e - rotate knobs
         // Enter - press button
-
+        if (disableEverything)
+            return;
         
         
 
@@ -185,7 +264,7 @@ public class Controller : MonoBehaviour
     void ResetFuel()
     {
         fuel = maxFuel;
-        fuelGauge.value = fuel;
+        //fuelGauge.value = fuel;
     }
     void FuelDeplete()
     {
@@ -196,6 +275,15 @@ public class Controller : MonoBehaviour
     }
     void SetSoundLevel()
     {
+        if (currentDepth == Depth.Event || currentDepth == Depth.End)
+        {
+            noiseSource.GetComponent<AudioSource>().volume = 0f;
+            reticle.GetComponent<AudioSource>().volume = 0f;
+            ambientSource.GetComponent<AudioSource>().Play();
+            return;
+        }
+
+        ambientSource.GetComponent<AudioSource>().Stop();
         currentSoundLevel = soundMap[reticlePos.i, reticlePos.j];
         Debug.Log("Sound: " + currentSoundLevel);
         //TODO change guagues and play sound
@@ -340,7 +428,7 @@ public class Controller : MonoBehaviour
         {
             degreesToTurn = clockWise ? horizontalDegrees : -horizontalDegrees;
 
-            horizontalKnob.transform.Rotate(Vector3.up * degreesToTurn);
+            horizontalKnob.transform.Rotate(Vector3.forward * degreesToTurn);
 
             horizontalKnob.GetComponent<AudioSource>().PlayOneShot(dialTurn);
 
@@ -348,7 +436,7 @@ public class Controller : MonoBehaviour
         else if (selectedKnob == Knob.Vertical)
         {
             degreesToTurn = clockWise ? verticalDegrees : -verticalDegrees;
-            verticalKnob.transform.Rotate(Vector3.up * degreesToTurn);
+            verticalKnob.transform.Rotate(Vector3.forward * degreesToTurn);
             verticalKnob.GetComponent<AudioSource>().PlayOneShot(dialTurn);
         }
 
@@ -413,6 +501,7 @@ public class Controller : MonoBehaviour
         float canvasHorizontalPos = (imageHorizontalRes / horizontalTicks) * h /*+ (imageHorizontalRes / horizontalTicks)*/;
         float canvasVerticalPos = (imageVerticalRes / verticalTicks) * v/* + (imageVerticalRes / verticalTicks)*/;
 
+
         //reticle
         if (flipMovement)
         {
@@ -440,6 +529,12 @@ public class Controller : MonoBehaviour
                 if (reticlePos.j == s.horizontalCoordiante && reticlePos.i == s.verticalCoordiante)
                 {
                     //RIGHT LOCATION
+                    EnterNextStage(s);
+
+
+
+
+
                     ResetFuel();
                     pressedCorrect = true;
                     confirmButton.GetComponent<AudioSource>().PlayOneShot(chooseCorrect);
@@ -492,6 +587,43 @@ public class Controller : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(changeDial, 0.2f);
         //TODO highlight knob!
     }
+
+    void EnterNextStage(SoundSource s)
+    {
+        currentMap.GetComponent<Image>().enabled = false;
+        switch (currentDepth)
+        {
+            case Depth.Galaxy:
+                {
+                    currentMap = clusters[0];
+                    currentDepth = Depth.Cluster;
+                    break;
+                }
+            case Depth.Cluster:
+                {
+                    int mapIndex = systemsLocations[s];
+                    currentMap = systems[mapIndex];
+                    currentDepth = Depth.System;
+
+                    break;
+                }
+        }
+
+        soundSources = currentMap.GetComponent<MapData>().soundSources;
+        StartCoroutine("SceneTransition");
+        CreateSoundMap();
+    }
+
+    IEnumerator SceneTransition()
+    {
+        disableEverything = true;
+        yield return new WaitForSeconds(0.2f);
+        disableEverything = false;
+        currentMap.GetComponent<Image>().enabled = true;
+        SetSoundLevel();
+
+    }
+
 
 
 }
