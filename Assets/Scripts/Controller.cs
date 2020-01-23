@@ -102,6 +102,7 @@ public class Controller : MonoBehaviour
     public AudioClip chooseCorrect;
     public AudioClip choseWrong;
     public AudioClip changeDial;
+    public AudioClip fuelDeplete;
 
     // Start is called before the first frame update
     void Start()
@@ -190,6 +191,7 @@ public class Controller : MonoBehaviour
     {
         fuel -= fuelDepleteAmount;
         //fuelGauge.value = fuel / maxFuel;
+        //fuelGauge.GetComponent<AudioSource>().PlayOneShot(fuelDeplete, 0.7f);
         Debug.Log("Fuel: " + fuel);
     }
     void SetSoundLevel()
@@ -202,7 +204,7 @@ public class Controller : MonoBehaviour
             noiseSource.GetComponent<AudioSource>().volume = 0.1f;
             reticle.GetComponent<AudioSource>().volume = 0;
         }
-        else if (currentSoundLevel <= 0.1f) {
+        else if (currentSoundLevel <= 0.9f) {
             noiseSource.GetComponent<AudioSource>().volume = 0.1f;
             reticle.GetComponent<AudioSource>().volume  = currentSoundLevel;
         }
@@ -313,7 +315,6 @@ public class Controller : MonoBehaviour
         if (turned)
         {
             SetSoundLevel();
-            FuelDeplete();
 
             
         }
@@ -456,6 +457,8 @@ public class Controller : MonoBehaviour
         if (!pressedCorrect)
         {
             StartCoroutine("PressedWrong");
+            FuelDeplete();
+
         }
         //TODO change image
 
