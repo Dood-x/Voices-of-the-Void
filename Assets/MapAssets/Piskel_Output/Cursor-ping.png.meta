@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: db3ed8d93c5db3f4089dad5da90b8378
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7684413081477228816
+    second: Cursor-ping_0
+  - first:
+      213: -2138630711076415241
+    second: Cursor-ping_1
+  - first:
+      213: 2706813126074750267
+    second: Cursor-ping_2
+  - first:
+      213: -229619751656024638
+    second: Cursor-ping_3
+  - first:
+      213: -1463500071467843339
+    second: Cursor-ping_4
+  - first:
+      213: -380992994861313710
+    second: Cursor-ping_5
+  - first:
+      213: -121271844586475572
+    second: Cursor-ping_6
+  - first:
+      213: -7123211801984058293
+    second: Cursor-ping_7
+  - first:
+      213: 8114056968011369211
+    second: Cursor-ping_8
+  - first:
+      213: -8813999735305868966
+    second: Cursor-ping_9
+  - first:
+      213: -4457828808614963955
+    second: Cursor-ping_10
+  - first:
+      213: 8113605742145682795
+    second: Cursor-ping_11
+  - first:
+      213: 1571747371255092314
+    second: Cursor-ping_12
+  - first:
+      213: -4148594173367222572
+    second: Cursor-ping_13
+  - first:
+      213: -1268722693089082921
+    second: Cursor-ping_14
+  - first:
+      213: -7480213880361210217
+    second: Cursor-ping_15
+  - first:
+      213: -2451345307222211590
+    second: Cursor-ping_16
+  - first:
+      213: 4263448023705247096
+    second: Cursor-ping_17
+  - first:
+      213: -7065471446082353757
+    second: Cursor-ping_18
+  - first:
+      213: -6988449237427284204
+    second: Cursor-ping_19
+  - first:
+      213: 3603871292557435777
+    second: Cursor-ping_20
+  - first:
+      213: -4987578046584824729
+    second: Cursor-ping_21
+  - first:
+      213: 4171074789704390758
+    second: Cursor-ping_22
+  - first:
+      213: 4995167661316696499
+    second: Cursor-ping_23
+  - first:
+      213: -3909938911050977042
+    second: Cursor-ping_24
+  - first:
+      213: 9001041321418572798
+    second: Cursor-ping_25
+  - first:
+      213: 7760754027548732902
+    second: Cursor-ping_26
+  - first:
+      213: -8997588177007801156
+    second: Cursor-ping_27
+  - first:
+      213: -8800260683618272905
+    second: Cursor-ping_28
+  - first:
+      213: 8267887534609737626
+    second: Cursor-ping_29
+  - first:
+      213: 2107810515740252937
+    second: Cursor-ping_30
+  - first:
+      213: 419489053624032928
+    second: Cursor-ping_31
+  - first:
+      213: 5711212288041511208
+    second: Cursor-ping_32
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cursor-ping_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 156
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f45e95001c33c45bad4dc3e5a98145
+      internalID: 7684413081477228816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 150
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986adb3b26c5610499439bfc437ae93a
+      internalID: -2138630711076415241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 146
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4592dff3f97fc39409d657ef20c5ef44
+      internalID: 2706813126074750267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 104
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbb6ba14ea75864db8c73b489eb3714
+      internalID: -229619751656024638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 104
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05755f963180b6c47ad51ce2470b0a55
+      internalID: -1463500071467843339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_5
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 110
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c30c3759e3ae141977fa9f598722bf
+      internalID: -380992994861313710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb46229e8cb46f64a84302155d73eee4
+      internalID: -121271844586475572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 102
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db193756d71fa45408422ff06a79044c
+      internalID: -7123211801984058293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 116
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d16545c41606a143bf6605fa02402e9
+      internalID: 8114056968011369211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 110
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4930cf31edd2f4dbe5c932226d295d
+      internalID: -8813999735305868966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f5fc37b8532f94f9c02d549ee0f9bb
+      internalID: -4457828808614963955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 102
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c5abede6f3c954db4a374348ec4153
+      internalID: 8113605742145682795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 77
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fab617653d70a4da09ebc6785939ce
+      internalID: 1571747371255092314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 102
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a20c74c91275594ab0c1e5349f2fbd1
+      internalID: -4148594173367222572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_14
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 102
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c1ce56e49f9c240b6ab1d6b572447b
+      internalID: -1268722693089082921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_15
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 106
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac06ebac07940d46aef913ff2a214f3
+      internalID: -7480213880361210217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_16
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 102
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ee4e7ac339cc64baf7fa2f8be42142
+      internalID: -2451345307222211590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_17
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 102
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27093586e76723949ab74e587b608bea
+      internalID: 4263448023705247096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_18
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 82
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08817ae8d12a6f04bbf87e42b480273d
+      internalID: -7065471446082353757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_19
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 71
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd76514361ebba14d9d432d7935de089
+      internalID: -6988449237427284204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_20
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 82
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc01e12934f0e946b1152be1e7bcf40
+      internalID: 3603871292557435777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_21
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 74
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7103e44835921af4dbec39a4c9642eeb
+      internalID: -4987578046584824729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_22
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 68
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dd8340dc36c2c4f87bf64f1f016268
+      internalID: 4171074789704390758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 72
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b15764bcc740104db4eaac6c88917bc
+      internalID: 4995167661316696499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 42
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87717969191231f4b9b28bde0d22ee6d
+      internalID: -3909938911050977042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_25
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 78
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6267a8b4f40a0ab4db70db62e2280c35
+      internalID: 9001041321418572798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_26
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 56
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d4bd173cd9c50429bbeb15d2003e68
+      internalID: 7760754027548732902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 40
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a99f6a6c7d63e94889ddd5aa0213d82
+      internalID: -8997588177007801156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 82
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeed7c678007bbe4da230b798ed8ed31
+      internalID: -8800260683618272905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_29
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 76
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51619f3a4ded7ed48b7c69cd969e80db
+      internalID: 8267887534609737626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_30
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 68
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481f0b6a15ecc664db37f21fc80c1ecb
+      internalID: 2107810515740252937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_31
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 57
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ab1af83d734214c9ada3e0535e99cf
+      internalID: 419489053624032928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cursor-ping_32
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 3
+        width: 56
+        height: 55
+      alignment: 9
+      pivot: {x: 0.50995785, y: 0.5101521}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39acb99693247a340999645144f67bd3
+      internalID: 5711212288041511208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
