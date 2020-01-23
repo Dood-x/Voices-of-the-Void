@@ -666,19 +666,21 @@ public class Controller : MonoBehaviour
                 }
             case Depth.System:
                 {
-                    if (endingLocation[currentMapIndex].horizontalCoordiante == s.horizontalCoordiante && endingLocation[currentMapIndex].verticalCoordiante == s.verticalCoordiante)
+                    if (endingLocation.ContainsKey(currentMapIndex))
                     {
-                        currentDepth = Depth.End;
-                        currentMapIndex = 0;
-                        currentMap = end[0];
-
+                        if (endingLocation[currentMapIndex].horizontalCoordiante == s.horizontalCoordiante && endingLocation[currentMapIndex].verticalCoordiante == s.verticalCoordiante)
+                        {
+                            currentDepth = Depth.End;
+                            currentMapIndex = 0;
+                            currentMap = end[0];
+                            break;
+                        }
                     }
-                    else
-                    {
-                        currentMapIndex = eventLocations[currentMapIndex][s];
-                        currentMap = events[currentMapIndex];
-                        currentDepth = Depth.Event;
-                    }
+                    
+                    
+                    currentMapIndex = eventLocations[currentMapIndex][s];
+                    currentMap = events[currentMapIndex];
+                    currentDepth = Depth.Event;
                     break;
                 }
 
