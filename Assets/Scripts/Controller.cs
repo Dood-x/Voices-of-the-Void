@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct SoundSource
@@ -678,6 +679,7 @@ public class Controller : MonoBehaviour
                             currentDepth = Depth.End;
                             currentMapIndex = 0;
                             currentMap = end[0];
+                            SceneManager.LoadScene(1, LoadSceneMode.Single);
                             break;
                         }
                     }
@@ -699,6 +701,7 @@ public class Controller : MonoBehaviour
                 }
             case Depth.End:
                 {
+                    //SceneManager.LoadScene(1, LoadSceneMode.Single);
                     break;
                 }
 
