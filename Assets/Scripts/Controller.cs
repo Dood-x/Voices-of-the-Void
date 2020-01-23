@@ -61,6 +61,8 @@ public class Controller : MonoBehaviour
 
     private AudioSource audios;
 
+    private int currentMapIndex = 0;
+
     bool disableEverything = false;
     public enum Knob {
         Vertical,
@@ -113,6 +115,9 @@ public class Controller : MonoBehaviour
     GameObject currentMap;
     Depth currentDepth;
     Dictionary<SoundSource, int> systemsLocations;
+    //<system, soundsource, event>
+    List<Dictionary<SoundSource, int> > eventLocations;
+    Dictionary<int, SoundSource> endingLocation;
 
 
     [Header("Audio")]
@@ -191,9 +196,59 @@ public class Controller : MonoBehaviour
         {
             systemsLocations.Add(possibleSources[i], systemsIndex[i]);
         }
-        
 
+
+        //assign ending
+
+        //getall soundsources and add them to their systems
+        //systems, sounds
+        List<List<SoundSource> > systemSounds = new List<List<SoundSource> >();
+        for (int i = 0; i < systems.Length; i++)
+        {
+            systemSounds.Add(new List<SoundSource>());
+            foreach (SoundSource s in systems[i].GetComponent<MapData>().soundSources)
+            {
+                if(s.soundLevel == 1.0)
+                {
+                    systemSounds[i].Add(s);
+                }
+            }
+        }
+
+
+        // take a random source and put the ending there
+        endingLocation = new Dictionary<int, SoundSource>();
+        int randint = UnityEngine.Random.Range(0, noLocations);
+        List<SoundSource> soundS = systemSounds[randint];
+        int randSource = UnityEngine.Random.Range(0, soundS.Count);
+        endingLocation.Add(randint, soundS[randSource]);
+        soundS.RemoveAt(randSource);
+
+        // assign events
+        int noEvents = events.Length;
+
+        int[] eventsIndices = new int[noEvents];
+        for (int i = 0; i < noSystems; i++)
+        {
+            eventsIndices[i] = i;
+        }
+
+        ShuffleArray(eventsIndices);
+
+        //itearete thorugh all systems and soundsources and assign events
+        eventLocations = new List< Dictionary<SoundSource, int> >();
+        int eventI = 0;
+        for (int i = 0; i < systemSounds.Count; i++)
+        {
+            eventLocations.Add(new Dictionary<SoundSource, int>());
+            for(int j = 0; j < systemSounds[i].Count; j++)
+            {
+                eventLocations[i].Add(systemSounds[i][j], eventI);
+                eventI = (eventI+1) % events.Length;
+            }
+        }
     }
+
 
     public static void ShuffleArray<T>(T[] arr)
     {
@@ -245,7 +300,6 @@ public class Controller : MonoBehaviour
         // Enter - press button
         if (disableEverything)
             return;
-        
         
 
         if (selectedKnob != Knob.Confirm)
@@ -522,11 +576,12 @@ public class Controller : MonoBehaviour
             return false;
 
         bool pressedCorrect = false;
+
         foreach(SoundSource s in soundSources)
         {
-            if(s.soundLevel == 1.0f)
+            if(s.soundLevel == 1.0f || currentDepth == Depth.Event)
             {
-                if (reticlePos.j == s.horizontalCoordiante && reticlePos.i == s.verticalCoordiante)
+                if ((reticlePos.j == s.horizontalCoordiante && reticlePos.i == s.verticalCoordiante) || currentDepth == Depth.Event)
                 {
                     //RIGHT LOCATION
                     EnterNextStage(s);
@@ -535,7 +590,7 @@ public class Controller : MonoBehaviour
 
 
 
-                    ResetFuel();
+                    //ResetFuel();
                     pressedCorrect = true;
                     confirmButton.GetComponent<AudioSource>().PlayOneShot(chooseCorrect);
                 }
@@ -596,6 +651,7 @@ public class Controller : MonoBehaviour
             case Depth.Galaxy:
                 {
                     currentMap = clusters[0];
+                    currentMapIndex = 0;
                     currentDepth = Depth.Cluster;
                     break;
                 }
@@ -603,10 +659,42 @@ public class Controller : MonoBehaviour
                 {
                     int mapIndex = systemsLocations[s];
                     currentMap = systems[mapIndex];
+                    currentMapIndex = mapIndex;
                     currentDepth = Depth.System;
 
                     break;
                 }
+            case Depth.System:
+                {
+                    if (endingLocation[currentMapIndex].horizontalCoordiante == s.horizontalCoordiante && endingLocation[currentMapIndex].verticalCoordiante == s.verticalCoordiante)
+                    {
+                        currentDepth = Depth.End;
+                        currentMapIndex = 0;
+                        currentMap = end[0];
+
+                    }
+                    else
+                    {
+                        currentMapIndex = eventLocations[currentMapIndex][s];
+                        currentMap = events[currentMapIndex];
+                        currentDepth = Depth.Event;
+                    }
+                    break;
+                }
+
+            case Depth.Event:
+                {
+                    currentMap = clusters[0];
+                    currentMapIndex = 0;
+                    currentDepth = Depth.Cluster;
+                    break;
+                }
+            case Depth.End:
+                {
+                    break;
+                }
+
+            
         }
 
         soundSources = currentMap.GetComponent<MapData>().soundSources;
