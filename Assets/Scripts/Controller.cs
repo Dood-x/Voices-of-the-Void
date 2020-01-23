@@ -583,16 +583,20 @@ public class Controller : MonoBehaviour
             {
                 if ((reticlePos.j == s.horizontalCoordiante && reticlePos.i == s.verticalCoordiante) || currentDepth == Depth.Event)
                 {
+
+                    if (currentDepth == Depth.Event)
+                    {
+                        Debug.Log("Back to cluster...");
+
+                    }
                     //RIGHT LOCATION
                     EnterNextStage(s);
-
-
-
 
 
                     //ResetFuel();
                     pressedCorrect = true;
                     confirmButton.GetComponent<AudioSource>().PlayOneShot(chooseCorrect);
+                    break;
                 }
 
 
@@ -670,6 +674,7 @@ public class Controller : MonoBehaviour
                     {
                         if (endingLocation[currentMapIndex].horizontalCoordiante == s.horizontalCoordiante && endingLocation[currentMapIndex].verticalCoordiante == s.verticalCoordiante)
                         {
+                            Debug.Log("Found the ending!");
                             currentDepth = Depth.End;
                             currentMapIndex = 0;
                             currentMap = end[0];
@@ -680,6 +685,7 @@ public class Controller : MonoBehaviour
                     
                     currentMapIndex = eventLocations[currentMapIndex][s];
                     currentMap = events[currentMapIndex];
+                    Debug.Log("Event " + currentMapIndex);
                     currentDepth = Depth.Event;
                     break;
                 }
