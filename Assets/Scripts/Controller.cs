@@ -344,17 +344,18 @@ public class Controller : MonoBehaviour
         //TODO change guagues and play sound
         if (currentSoundLevel == 0)
         {
-            noiseSource.GetComponent<AudioSource>().volume = 0.1f;
+            noiseSource.GetComponent<AudioSource>().volume = 0.2f;
             reticle.GetComponent<AudioSource>().volume = 0;
         }
         else if (currentSoundLevel <= 0.9f) {
-            noiseSource.GetComponent<AudioSource>().volume = 0.1f;
+            noiseSource.GetComponent<AudioSource>().volume = 0.2f + (currentSoundLevel*0.2f);
             reticle.GetComponent<AudioSource>().volume  = currentSoundLevel;
         }
         else
         {
             noiseSource.GetComponent<AudioSource>().volume = 1.0f - currentSoundLevel;
-            reticle.GetComponent<AudioSource>().volume = currentSoundLevel;
+            noiseSource.GetComponent<AudioSource>().volume = 0.2f - (currentSoundLevel * 0.1f);
+            //reticle.GetComponent<AudioSource>().volume = currentSoundLevel;
         }
     }
 
